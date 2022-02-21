@@ -1,11 +1,25 @@
-# Vue 3 + Typescript + Vite
+# 游戏算法库文档项目
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+这是一个游戏算法库的文档网页的项目，项目基于 Typescript 和 Vue3 进行构建，希望在这个网站可以提供 game-algorithm 库的详细说明和 demo 为开发者提供更加良好的阅读体验。
 
-## Recommended IDE Setup
+## 主体项目 game-algorithm
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+主体项目在 NPM 中可以使用，具体参考 [game-algorithm](https://www.npmjs.com/package/game-algorithm)
 
-## Type Support For `.vue` Imports in TS
+## 项目介绍
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+项目是基于 Vue3 和 Typescript 的前端页面，使用 vite 进行打包。
+
+```bash
+
+# 开启开发模式
+npm run dev
+# or
+pnpm dev
+
+# 打包
+npm run build
+# or
+pnpm build
+
+```
