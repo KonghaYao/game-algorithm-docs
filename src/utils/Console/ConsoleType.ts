@@ -1,0 +1,18 @@
+export enum ConsoleType {
+    log,
+    table,
+    info,
+    warn,
+    success,
+    error,
+    time,
+    group,
+    groupEnd,
+    trace,
+    dir,
+    assert,
+}
+export interface ConsoleRecord {
+    type: ConsoleType;
+    args: any[];
+}
