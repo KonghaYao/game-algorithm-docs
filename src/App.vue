@@ -1,13 +1,14 @@
 <template>
-  <router-view></router-view>
+  <router-view class="MAIN"></router-view>
 </template>
 
 <style>
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://cdn.jsdelivr.net/gh/KonghaYao/chinese-free-web-font-storage/build/ipix_12px/result.css");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: ipix_12px, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -16,6 +17,8 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  display: flex;
+}
+.MAIN {
+  height: 100vh;
 }
 </style>

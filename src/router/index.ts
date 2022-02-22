@@ -1,10 +1,32 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { algorithmList } from "./algorithmList";
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
         name: "Home",
-        component: () => import("../views/Home.vue"),
+        redirect: { name: "MapGenerator" },
+    },
+    {
+        path: "/algorithm",
+        name: "Algorithm",
+
+        component: () => import("../views/Algorithm.vue"),
+        children: [
+            ...algorithmList,
+            {
+                path: "*",
+                redirect: {
+                    name: "MapGenerator",
+                },
+            },
+        ],
+    },
+    {
+        path: "/*",
+        redirect: {
+            name: "Algorithm",
+        },
     },
 ];
 
