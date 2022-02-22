@@ -45,6 +45,9 @@ export const useMapStore = defineStore({
 
             BigMap = createMapG(this);
             this.map = BigMap.map;
+            this.height = BigMap.height;
+            this.width = BigMap.width;
+            this.seed = BigMap.seed;
         },
     },
 });

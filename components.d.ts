@@ -5,8 +5,10 @@
 declare module 'vue' {
   export interface GlobalComponents {
     ColorPattern: typeof import('./src/components/MapGenerator/ColorPattern.vue')['default']
+    Detail: typeof import('./src/components/MapGenerator/Detail.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
+    ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']

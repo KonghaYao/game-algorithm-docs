@@ -42,4 +42,7 @@ const createView = () => {
     render()
 }
 onMounted(createView)
+defineExpose(
+    { createView }
+)
 </script>
