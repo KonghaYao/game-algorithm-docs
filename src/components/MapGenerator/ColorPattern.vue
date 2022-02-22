@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col overflow-y-scroll p-4 col-span-1 h-64 rounded-lg bg-green-100">
+    <div class="flex flex-col overflow-y-scroll p-4 col-span-1 h-64 rounded-lg bg-green-50">
         <div
             class="flex flex-row items-center transition-transform hover:scale-125"
             v-for="(item, index) in store.colorDetail"

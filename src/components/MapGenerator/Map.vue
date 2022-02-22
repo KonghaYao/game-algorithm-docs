@@ -16,12 +16,11 @@
 
 <script lang="ts" setup>
 import { onMounted, nextTick } from "vue";
-import { CONSOLE, historyToTree } from "../../utils/Console/Console";
 
 import { ColorToHex } from "enum-color";
 import { useMapStore } from "./store";
-
-const console = new CONSOLE();
+import { useConsoleStore } from "../../store/console";
+const ConsoleStore = useConsoleStore()
 const store = useMapStore();
 
 /** 用于渲染数据的监控 */
@@ -31,15 +30,14 @@ const render = () => {
     nextTick(() => {
         console.timeEnd("渲染图形");
         console.log("Map 渲染结束");
-        console.unwrapGlobal();
-        window.console.log(
-            historyToTree({ total: console.history, cursor: 0 })
-        );
+
+        ConsoleStore.revokeConsole()
+        ConsoleStore.refreshData()
     });
 }
 /** 创建整个视图 */
 const createView = () => {
-    console.wrapGlobal();
+    ConsoleStore.useConsole()
     store.createMap()
     render()
 }

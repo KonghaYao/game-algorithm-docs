@@ -10,6 +10,7 @@ declare module 'vue' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
+    ElTreeV2: typeof import('element-plus/es')['ElTreeV2']
     Map: typeof import('./src/components/MapGenerator/Map.vue')['default']
     MapGenerator: typeof import('./src/components/MapGenerator/MapGenerator.vue')['default']
   }

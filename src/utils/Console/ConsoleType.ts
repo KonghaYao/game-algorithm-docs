@@ -13,6 +13,7 @@ export enum ConsoleType {
     assert,
 }
 export interface ConsoleRecord {
+    id: string | number;
     type: ConsoleType;
     args: any[];
 }

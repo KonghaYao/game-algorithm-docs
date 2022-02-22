@@ -10,7 +10,7 @@ const $Console: _console | CONSOLE =
 
 const now = () => new Date().getTime();
 
-interface Node extends ConsoleRecord {
+export interface Node extends ConsoleRecord {
     // data?: ConsoleRecord;
     isLeaf?: boolean;
     children?: Node[];
@@ -51,6 +51,7 @@ export class CONSOLE {
         if ("console" in window.console) {
             throw "console 已经被代理了";
         } else {
+            this.history = [];
             this.console = window.console;
             (window as any).console = this;
             $Console.group(new Date().toLocaleString() + " Console 代理组");
@@ -58,8 +59,8 @@ export class CONSOLE {
     }
     /** 恢复全局 console */
     unwrapGlobal() {
-        if (this.console && "console" in window.console) {
-            (window as any).console = this.console;
+        if ("console" in window.console) {
+            if (this.console) (window as any).console = this.console;
             $Console.groupEnd();
             this.console = undefined;
         } else {
@@ -75,49 +76,51 @@ export class CONSOLE {
         this.timeEnd(label);
         this.groupEnd();
     }
-
+    private record(history: Omit<ConsoleRecord, "id">) {
+        this.history.push({ id: this.history.length, ...history });
+    }
     clear() {
         this.history = [];
         console.warn("清空控制台");
     }
     log(...args: any[]) {
-        const record: ConsoleRecord = {
+        const record: Omit<ConsoleRecord, "id"> = {
             type: ConsoleType.log,
             args,
         };
-        this.history.push(record);
+        this.record(record);
         $Console.log(...args);
     }
     info(...args: any[]) {
-        this.history.push({
+        this.record({
             type: ConsoleType.info,
             args,
         });
         $Console.info(...args);
     }
     success(...args: any[]) {
-        this.history.push({
+        this.record({
             type: ConsoleType.success,
             args,
         });
         $Console.info(...args);
     }
     warn(...args: any[]) {
-        this.history.push({
+        this.record({
             type: ConsoleType.warn,
             args,
         });
         $Console.warn(...args);
     }
     error(...args: any[]) {
-        this.history.push({
+        this.record({
             type: ConsoleType.error,
             args,
         });
         $Console.error(...args);
     }
     table(obj: Object) {
-        this.history.push({
+        this.record({
             type: ConsoleType.table,
             args: [obj],
         });
@@ -137,13 +140,13 @@ export class CONSOLE {
 
         const duration = now() - time;
         const info = label + ": " + duration + "ms";
-        this.history.push({
+        this.record({
             type: ConsoleType.time,
             args: [info],
         });
     }
     group(label: string) {
-        this.history.push({
+        this.record({
             type: ConsoleType.group,
             args: [label],
         });
@@ -153,7 +156,7 @@ export class CONSOLE {
         for (let index = this.history.length - 1; index >= 0; index--) {
             const lastGroup = this.history[index];
             if (lastGroup.type === ConsoleType.group) {
-                this.history.push({
+                this.record({
                     type: ConsoleType.groupEnd,
                     args: [],
                 });
@@ -166,14 +169,14 @@ export class CONSOLE {
     trace() {
         const err = new Error();
         err.name = "Trace";
-        this.history.push({
+        this.record({
             type: ConsoleType.trace,
             args: [err.stack],
         });
         $Console.error(err.stack);
     }
     dir(obj: any) {
-        this.history.push({
+        this.record({
             type: ConsoleType.dir,
             args: [obj],
         });
@@ -182,7 +185,7 @@ export class CONSOLE {
     assert(expression: boolean, ...args: any) {
         if (!expression) {
             const info = format.apply(null, args);
-            this.history.push({
+            this.record({
                 type: ConsoleType.assert,
                 args: [info],
             });
