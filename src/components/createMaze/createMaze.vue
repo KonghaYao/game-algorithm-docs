@@ -3,10 +3,9 @@
         <div class="select-none pointer-events-none text-lg py-2 text-gray-700">MapGenerator : 代码编辑器</div>
         <div class="flex justify-evenly">
             <!-- 地图展示 -->
-            <Map ref="map"></Map>
+            <Maze ref="maze"></Maze>
             <!-- 颜色备注 -->
             <div class="flex flex-col justify-evenly">
-                <ColorPattern></ColorPattern>
                 <Detail></Detail>
             </div>
         </div>
@@ -14,32 +13,35 @@
 </template>
 
 <script lang="ts" setup>
-import { useMapStore } from './store';
-import Map from './Map.vue';
+import { useMazeStore } from './store';
+import Maze from './Maze.vue';
 import Detail from './Detail.vue';
 import { onMounted, onUnmounted, ref } from 'vue';
 import { hub } from '../../views/Algorithm/store';
 import { ControllerTemplate } from './ControllerTemplate'
-const store = useMapStore()
+const store = useMazeStore()
 
-const map = ref(null)
+const maze = ref(null)
 type input = {
     height?: number
     width?: number
     seed?: string
 }
 // 输入参数
-const { height = 100, width = 100, seed } = defineProps<input>()
+const { height = 50, width = 50, seed } = defineProps<input>()
 store.height = height
 store.width = width
 store.seed = seed
 
+
 const event = (form: input) => {
     Object.assign(store, form);
-    (map.value as any).createView()
+    (maze.value as any).createView()
 }
 onMounted(() => {
+    /** 监听参数注入 */
     hub.on("Controller-Change", event as any)
+    /** 触发算法加载 */
     hub.emit("openNewAlgorithm", ControllerTemplate)
 })
 onUnmounted(() => {

@@ -10,12 +10,12 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
     plugins: [
         vue(),
-        AutoImport({
-            resolvers: [ElementPlusResolver()],
-        }),
-        Components({
-            resolvers: [ElementPlusResolver()],
-        }),
+        // AutoImport({
+        //     resolvers: [ElementPlusResolver()],
+        // }),
+        // Components({
+        //     resolvers: [ElementPlusResolver()],
+        // }),
     ],
     resolve: {
         alias: {

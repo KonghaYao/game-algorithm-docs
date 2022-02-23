@@ -8,7 +8,7 @@ specifiers:
   autoprefixer: ^10.4.2
   element-plus: ^1.3.0-beta.10
   enum-color: ^1.1.1
-  game-algorithm: ^1.1.5
+  game-algorithm: ^1.1.7
   mitt: ^3.0.0
   pinia: ^2.0.11
   postcss: ^8.4.6
@@ -26,7 +26,7 @@ dependencies:
   '@form-create/element-ui': 3.1.1
   element-plus: 1.3.0-beta.10_vue@3.2.31
   enum-color: 1.1.1
-  game-algorithm: 1.1.5
+  game-algorithm: 1.1.7
   mitt: 3.0.0
   pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
   quick-format-unescaped: 4.0.4
@@ -1208,19 +1208,19 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /game-algorithm/1.1.5:
-    resolution: {integrity: sha512-xP2zRSXMm8N6yYkNYWTJVAovNUvJ+ssLl6YZ73goUNzgYwk84359Dk1HCHGo0hzjODJqnmJwyoeZQL5b4JoChA==}
+  /game-algorithm/1.1.7:
+    resolution: {integrity: sha512-7bh8VjIDwuQvAs/stoDVD1VjfpiL/DlEqKPxUICltl9fUUluk43SnvKDQ0sKyLWP6HkYeOzNYPzgxnuH6/UBFA==}
     dependencies:
       enum-color: 1.1.1
-      game-random: 1.0.3
+      game-random: 1.0.7
       lodash-es: 4.17.21
       node-pid-controller: 1.0.1
       seedrandom: 3.0.5
       treeverse: 1.0.4
     dev: false
 
-  /game-random/1.0.3:
-    resolution: {integrity: sha512-MxUpV3ePvJBjjAHuAeJooZT0c+dGocaDlCfj75NeO200B/ObUUPbxynn/ZbQpi9y+WP4EMVv6GoVwVwdotcbdw==}
+  /game-random/1.0.7:
+    resolution: {integrity: sha512-pc0s4hce3Q10EskYcJs9ooZpFkoUT7qPAWiHvoa62rH42jk6lMCrhQB3HGYaM+8qeMRekoVRHLFnpZUv3iIFNg==}
     dependencies:
       seedrandom: 3.0.5
       shuffle-seed: 1.1.6
