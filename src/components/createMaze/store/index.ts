@@ -8,7 +8,9 @@ export const useMazeStore = defineStore({
     state: createState,
     actions: {
         resetMaze() {
+            console.time("迷宫算法生成");
             this.maze = createMaze(this.width, this.height, this.seed);
+            console.timeEnd("迷宫算法生成");
         },
     },
 });

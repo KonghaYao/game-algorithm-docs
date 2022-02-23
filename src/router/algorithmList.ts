@@ -10,4 +10,9 @@ export const algorithmList = [
         name: "createMaze",
         component: () => import("../components/createMaze/createMaze.vue"),
     },
+    {
+        path: "WishSystem",
+        name: "WishSystem",
+        component: () => import("../components/WishSystem/WishSystem.vue"),
+    },
 ];

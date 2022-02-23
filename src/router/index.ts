@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "*",
                 redirect: {
-                    name: "MapGenerator",
+                    name: "WishSystem",
                 },
             },
         ],
