@@ -2,7 +2,7 @@
     <div class="flex flex-col w-3/4">
         <div class="flex flex-row flex-wrap">
             <div
-                v-for="(cell, index) in store.wishRecords"
+                v-for="(cell, index) in wishRecords"
                 class="h-2 w-2"
                 :style="{
                     backgroundColor: colors[cell.id]
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, nextTick } from "vue";
+import { onMounted, nextTick, computed } from "vue";
 
 import { ColorToHex } from "enum-color";
 import { useWishStore } from "./store";
@@ -24,6 +24,7 @@ const ConsoleStore = useConsoleStore()
 const store = useWishStore();
 const colors = [ColorToHex.blue200, ColorToHex.yellow600, ColorToHex.violet600]
 
+const wishRecords = computed(() => store.wishRecords)
 /** 用于渲染数据的监控 */
 const render = () => {
     console.time("渲染图形");

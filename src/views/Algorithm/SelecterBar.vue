@@ -1,23 +1,19 @@
 <template>
     <div class="h-full p-2">
-        <div class="h-full bg-gray-100 flex flex-col p-4">
-            <el-button
-                type="primary"
-                round
-                v-for="name in names"
-                :key="name"
-                class="font-bold"
-                @click="jumpTo(name)"
-            >{{ name }}</el-button>
+        <div class="bg-gray-100 flex h-full flex-col p-4 items-center">
+            <el-menu :collapse="isCollapse" router>
+                <el-menu-item :index="'/Algorithm/' + name" v-for="name in names" :key="name">
+                    <template #title>{{ name }}</template>
+                </el-menu-item>
+            </el-menu>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import router from '../../router';
+import { ref } from 'vue';
 import { algorithmList } from '../../router/algorithmList';
 const names = algorithmList.map(i => i.name);
-const jumpTo = (name: string) => {
-    router.push({ name })
-}
+const isCollapse = ref(false)
+
 </script>

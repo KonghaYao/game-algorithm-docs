@@ -37,6 +37,9 @@ export const useWishStore = defineStore({
             this.wishRecords = [];
             this.wish(1000);
         },
+        clearWishRecord() {
+            this.wishRecords = [];
+        },
         wish(time: number) {
             [...Array(time).keys()].map((i) => {
                 const gift = Wish.wish(this.userID);
@@ -46,8 +49,7 @@ export const useWishStore = defineStore({
         },
         getDataFromWishSystem() {
             const user = (Wish as any).UserPool[this.userID] as User;
-
-            replaceArray(this.pitchArray, user.pitchArray);
+            this.pitchArray = user.pitchArray;
 
             this.wishCount = user.wishRecords.length;
         },

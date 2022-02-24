@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import formCreate, { Rule, Options } from '@form-create/element-ui'
-import { reactive, ref } from 'vue'
+import { reactive, ref, computed } from 'vue'
 import { hub, useAlgorithmStore } from './store'
 const FormCreate = formCreate.$form();
 const fApi = reactive({})
@@ -18,6 +18,7 @@ const options = ref({
 }) as Options
 
 const store = useAlgorithmStore()
-const rule = store.Controller.templateRules
+/** 深层对象需要进行computed */
+const rule = computed(() => store.Controller.templateRules)
 
 </script>

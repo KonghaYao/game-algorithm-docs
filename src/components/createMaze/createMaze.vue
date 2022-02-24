@@ -29,9 +29,7 @@ type input = {
 }
 // 输入参数
 const { height = 50, width = 50, seed } = defineProps<input>()
-store.height = height
-store.width = width
-store.seed = seed
+store.$patch({ height, width, seed })
 
 
 const event = (form: input) => {

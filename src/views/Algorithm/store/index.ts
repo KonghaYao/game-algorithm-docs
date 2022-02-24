@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 const createState = () => ({
     Controller: {
         show: true,
-        templateRules: [] as Rule,
+        templateRules: [] as Rule[],
     },
 });
 export const hub = mitt();
@@ -20,8 +20,9 @@ export const useAlgorithmStore = defineStore({
 });
 
 // 接收 页面中的算法页面变化，并重置编辑器
-const handle = (template: Rule) => {
+const handle = (template: Rule[]) => {
     const store = useAlgorithmStore();
+    console.log(template);
     store.Controller.templateRules = template;
 };
 hub.on("openNewAlgorithm", handle as any);
