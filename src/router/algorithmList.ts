@@ -15,4 +15,9 @@ export const algorithmList = [
         name: "WishSystem",
         component: () => import("../components/WishSystem/WishSystem.vue"),
     },
+    {
+        path: "A_Star",
+        name: "A_Star",
+        component: () => import("../components/A_Star/A_Star.vue"),
+    },
 ];
