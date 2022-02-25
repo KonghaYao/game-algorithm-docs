@@ -12,7 +12,7 @@
         "animejs": "^3.2.1",
         "element-plus": "^1.3.0-beta.10",
         "enum-color": "^1.1.1",
-        "game-algorithm": "^1.1.13",
+        "game-algorithm": "^1.1.14",
         "game-random": "^1.0.7",
         "matter-js": "^0.18.0",
         "mitt": "^3.0.0",

@@ -11,7 +11,7 @@ specifiers:
   autoprefixer: ^10.4.2
   element-plus: ^1.3.0-beta.10
   enum-color: ^1.1.1
-  game-algorithm: ^1.1.13
+  game-algorithm: ^1.1.14
   game-random: ^1.0.7
   matter-js: ^0.18.0
   mitt: ^3.0.0
@@ -33,7 +33,7 @@ dependencies:
   animejs: 3.2.1
   element-plus: 1.3.0-beta.10_vue@3.2.31
   enum-color: 1.1.1
-  game-algorithm: 1.1.13
+  game-algorithm: 1.1.14
   game-random: 1.0.7
   matter-js: 0.18.0
   mitt: 3.0.0
@@ -1673,8 +1673,8 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /game-algorithm/1.1.13:
-    resolution: {integrity: sha512-fAr39mtjHfkgMPyTAW4Dw4k31UURuxFje3NNCCMu6HRvRBLwDmpRHyeSMkqvEgrvFxc18lauDesGHRjhPQwCzw==}
+  /game-algorithm/1.1.14:
+    resolution: {integrity: sha512-MYqJwMEwwjMSqdcGXuDAJl/SLAmsATB7XO7bO24y/1WZYXFH/K15qB1//60n0kMcSnYIKbgHba5eZcEEGIfn9A==}
     dependencies:
       enum-color: 1.1.1
       game-random: 1.0.7

@@ -1,6 +1,8 @@
 import { WishSystem } from "game-algorithm";
+import { User } from "game-algorithm/src/Wish";
 import { defineStore } from "pinia";
-import { createState, User } from "./State";
+
+import { createState } from "./State";
 import { random } from "game-random";
 
 let Wish = new WishSystem({

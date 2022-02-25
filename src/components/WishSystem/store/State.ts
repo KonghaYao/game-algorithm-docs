@@ -1,6 +1,7 @@
 import { WishSystem } from "game-algorithm";
+import { User } from "game-algorithm/src/Wish";
 import { ref } from "vue";
-export type User = Parameters<typeof WishSystem.prototype.CheckPitch>[0];
+
 export type Gift = ReturnType<typeof WishSystem.prototype.wish>;
 
 export const createState = () => {
