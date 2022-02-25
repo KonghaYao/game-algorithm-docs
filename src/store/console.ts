@@ -1,6 +1,6 @@
 import { CONSOLE } from "../utils/Console/Console";
 import { defineStore } from "pinia";
-import { reactive, watch, watchEffect, WatchStopHandle } from "vue";
+import { reactive, watch, WatchStopHandle } from "vue";
 const console = new CONSOLE();
 interface State {
     originData: CONSOLE["history"];

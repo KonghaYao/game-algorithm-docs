@@ -20,4 +20,9 @@ export const algorithmList = [
         name: "A_Star",
         component: () => import("../components/A_Star/A_Star.vue"),
     },
+    {
+        path: "Tracking",
+        name: "Tracking",
+        component: () => import("../components/Tracking/Tracking.vue"),
+    },
 ];
