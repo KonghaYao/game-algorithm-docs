@@ -25,4 +25,9 @@ export const algorithmList = [
         name: "Tracking",
         component: () => import("../components/Tracking/Tracking.vue"),
     },
+    {
+        path: "Flock",
+        name: "Flock",
+        component: () => import("../components/Flock/Flock.vue"),
+    },
 ];
