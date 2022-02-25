@@ -32,7 +32,6 @@ const render = () => {
         console.log("Map 渲染结束");
 
         ConsoleStore.revokeConsole()
-        ConsoleStore.refreshData()
     });
 }
 /** 创建整个视图 */

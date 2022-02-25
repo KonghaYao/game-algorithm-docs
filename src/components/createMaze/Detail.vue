@@ -1,12 +1,16 @@
 <template>
-    <div class="flex flex-col">
-        <span v-for="{ name, value } in template">
+    <div class="flex flex-col w-full">
+        <div v-for="{ name, value } in template" class="row">
             <span>{{ name }}</span>
             <span>{{ value }}</span>
-        </span>
+        </div>
     </div>
 </template>
-
+<style scoped>
+.row {
+    @apply flex flex-row justify-between;
+}
+</style>
 <script lang="ts" setup>
 import { computed, reactive, ref } from 'vue';
 import { useMazeStore } from './store';

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-red-50 p-4">
+    <div class="bg-violet-50 p-4">
         <div class="select-none pointer-events-none text-lg py-2 text-gray-700">MapGenerator : 代码编辑器</div>
         <div class="flex justify-evenly">
             <!-- 地图展示 -->
@@ -17,6 +17,7 @@
 import { useMapStore } from './store';
 import Map from './Map.vue';
 import Detail from './Detail.vue';
+import ColorPattern from './ColorPattern.vue';
 import { onMounted, onUnmounted, ref } from 'vue';
 import { hub } from '../../views/Algorithm/store';
 import { ControllerTemplate } from './ControllerTemplate'

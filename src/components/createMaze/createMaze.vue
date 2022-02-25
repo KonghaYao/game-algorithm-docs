@@ -5,7 +5,7 @@
             <!-- 地图展示 -->
             <Maze ref="maze"></Maze>
             <!-- 颜色备注 -->
-            <div class="flex flex-col justify-evenly">
+            <div class="flex flex-col justify-evenly w-1/4">
                 <Detail></Detail>
             </div>
         </div>

@@ -1,27 +1,30 @@
-import { CONSOLE, historyToTree, Node } from "../utils/Console/Console";
+import { CONSOLE } from "../utils/Console/Console";
 import { defineStore } from "pinia";
+import { reactive, watch, watchEffect, WatchStopHandle } from "vue";
 const console = new CONSOLE();
 interface State {
-    data: Node[];
+    originData: CONSOLE["history"];
 }
-
+let stop: WatchStopHandle;
 export const useConsoleStore = defineStore({
     id: "Console",
 
     state: (): State => {
         return {
-            data: [],
+            originData: [],
         };
     },
     actions: {
         useConsole() {
             console.wrapGlobal();
+            console.history = reactive(console.history);
+            stop = watch(console.history, (value) => {
+                this.originData = value;
+            });
         },
         revokeConsole() {
             console.unwrapGlobal();
-        },
-        refreshData() {
-            this.data = historyToTree({ cursor: 0, total: console.history });
+            stop();
         },
     },
 });

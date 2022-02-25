@@ -2,7 +2,7 @@
     <div class="py-2 bg-green-50 rounded-2xl">图例</div>
     <div class="flex flex-col overflow-y-scroll overflow-x-hidden p-4 h-64 rounded-lg bg-green-50">
         <div
-            class="flex flex-row items-center transition-transform hover:scale-110 hover:translate-x-12"
+            class="flex flex-row items-center transition-transform hover:scale-110 hover:translate-x-6"
             v-for="(item, index) in store.colorDetail"
             @click="store.flashRegion(index)"
         >
