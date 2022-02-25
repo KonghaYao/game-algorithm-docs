@@ -9,18 +9,25 @@
             }"
         >
             <SelecterBar></SelecterBar>
-            <div class="flex h-full flex-col w-full">
+            <div class="flex h-full flex-col w-full overflow-hidden">
                 <Content class="flex-grow"></Content>
                 <Console></Console>
             </div>
+            <div
+                class="transition-all"
+                :style="{
+                    width: store.Controller.show ? 'auto' : 0,
+                    maxWidth: '25%'
+                }"
+            >
+                <Controller></Controller>
+            </div>
         </div>
-        <el-drawer v-model="store.Controller.show" title="数据编辑器">
-            <Controller class="flex-grow"></Controller>
-        </el-drawer>
     </div>
 </template>
 
 <script lang="ts" setup>
+
 import Header from './Algorithm/Header.vue';
 import Content from './Algorithm/Content.vue';
 import Controller from './Algorithm/Controller.vue';

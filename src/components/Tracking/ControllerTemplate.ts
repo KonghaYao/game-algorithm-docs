@@ -1,9 +1,6 @@
 import { Rule } from "@form-create/element-ui";
 
-const col = {
-    span: 16,
-    labelWidth: 125,
-};
+const col = {};
 export const ControllerTemplate = [
     {
         type: "InputNumber",
