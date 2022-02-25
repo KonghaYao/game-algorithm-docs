@@ -7,8 +7,19 @@ const col = {
 export const ControllerTemplate = [
     {
         type: "InputNumber",
-        field: "height",
-        title: "高",
+        field: "space",
+        title: "最终距离",
+        value: 40,
+        col,
+        props: {
+            precision: 0,
+            step: 1,
+        },
+    },
+    {
+        type: "InputNumber",
+        field: "ballsNumber",
+        title: "追踪球数目",
         value: 20,
         col,
         props: {
@@ -18,23 +29,20 @@ export const ControllerTemplate = [
     },
     {
         type: "InputNumber",
-        field: "width",
-        title: "宽",
-        value: 20,
+        field: "speedScaleRate",
+        title: "速度缩放",
+        value: 0.1,
         col,
-        props: {
-            precision: 0,
-            step: 1,
-        },
+        props: {},
     },
     {
-        type: "input",
-        title: "地图种子",
-        field: "seed",
-        value: "",
-        col,
+        type: "switch",
+        title: "使用PID算法",
+        field: "usePID",
+        value: true,
         props: {
-            type: "text",
+            activeValue: true,
+            inactiveValue: false,
         },
     },
 ] as Rule;

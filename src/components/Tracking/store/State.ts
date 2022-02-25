@@ -1,14 +1,8 @@
-interface State {
-    maze: number[][];
-    height: number;
-    width: number;
-    seed?: string;
-}
-export const createState = (): State => {
+export const createState = () => {
     return {
-        maze: [],
-        height: 20,
-        width: 20,
-        seed: undefined,
+        usePID: true,
+        space: 40,
+        ballsNumber: 20,
+        speedScaleRate: 0.1,
     };
 };

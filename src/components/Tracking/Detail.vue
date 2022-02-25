@@ -23,13 +23,13 @@ const template = reactive<{
 }[]>([])
 
 template.push({
-    name: "宽",
-    value: computed(() => store.height)
+    name: "使用 PID 算法",
+    value: computed(() => store.usePID ? "是" : "否")
 }, {
-    name: "高",
-    value: computed(() => store.width)
+    name: "球的数目",
+    value: computed(() => store.ballsNumber)
 }, {
-    name: "种子",
-    value: computed(() => store.seed)
+    name: "最终距离",
+    value: computed(() => store.space)
 })
 </script>

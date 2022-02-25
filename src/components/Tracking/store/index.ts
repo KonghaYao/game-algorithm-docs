@@ -1,14 +1,15 @@
 import { defineStore } from "pinia";
 import { createGame } from "./createGame";
 import { createState } from "./State";
-let game: ReturnType<typeof createGame>;
+let clearGame: ReturnType<typeof createGame> = () => {};
 export const useStore = defineStore({
     id: "Maze",
 
     state: createState,
     actions: {
         reset(element: HTMLElement) {
-            game = createGame(element);
+            clearGame();
+            clearGame = createGame(element, this);
         },
     },
 });

@@ -11,7 +11,11 @@ import {
     Body,
     Vector,
 } from "matter-js";
-export const createGame = (element: HTMLElement) => {
+import { useStore } from "./index";
+export const createGame = (
+    element: HTMLElement,
+    store: ReturnType<typeof useStore>
+) => {
     const { width, height } = getComputedStyle(element);
 
     var engine = Engine.create(),
@@ -31,35 +35,49 @@ export const createGame = (element: HTMLElement) => {
     const target = watchingMouse(world, render, engine);
 
     /** 追踪的球 */
-    const balls = createBalls(world, 20);
+    const balls = createBalls(world, store.ballsNumber);
 
-    const loop = useTracking(balls, target);
+    const loop = useTracking(
+        balls,
+        target,
+        store.usePID,
+        store.space,
+        store.speedScaleRate
+    );
 
     return () => {
+        console.log("清理上一个画布");
         engine.enabled = false;
         Runner.stop(engineRunner);
+        render.canvas.remove();
         Render.stop(render);
         clearInterval(loop);
     };
 };
-function useTracking(balls: Body[], target: Body) {
+function useTracking(
+    balls: Body[],
+    target: Body,
+    usePID: boolean,
+    space: number,
+    speedScaleRate: number
+) {
     const controllers = balls.map((i) => {
         // ! 主要代码
         return new Tracking<Body>({
             target,
             tracker: i,
-            usePID: true,
+            usePID,
             getPosition(i) {
                 return i.position;
             },
 
             ctrConfig: {},
-            space: 40,
+            space,
         });
     });
     return setInterval(() => {
         balls.forEach((ball, index) => {
-            const { x, y } = controllers[index].update();
+            const { x, y } = controllers[index].update(speedScaleRate);
             Body.setVelocity(ball, Vector.create(x, y));
         });
     }, 100);
