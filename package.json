@@ -4,7 +4,8 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
-        "build": "vue-tsc --noEmit && vite build",
+        "build": "vue-tsc --noEmit && vite build ",
+        "build-only": "vite build",
         "preview": "vite preview"
     },
     "dependencies": {
@@ -30,11 +31,11 @@
         "@vitejs/plugin-vue": "^2.2.2",
         "autoprefixer": "^10.4.2",
         "postcss": "^8.4.7",
+        "rollup-plugin-visualizer": "^5.6.0",
         "tailwindcss": "^3.0.23",
         "typescript": "^4.5.5",
-        "unplugin-auto-import": "^0.6.1",
-        "unplugin-vue-components": "^0.17.21",
         "vite": "^2.8.4",
+        "vite-plugin-fast-external": "^1.4.8",
         "vue": "^3.2.25",
         "vue-router": "^4.0.12",
         "vue-tsc": "^0.29.8"

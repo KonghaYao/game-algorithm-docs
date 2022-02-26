@@ -6,6 +6,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://cdn.skypack.dev/element-plus@2.0.3/dist/index.css");
 @import url("https://cdn.jsdelivr.net/gh/KonghaYao/chinese-free-web-font-storage/build/Cubic/result.css");
 
 #app {

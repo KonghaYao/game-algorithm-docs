@@ -12,6 +12,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ElButton } from 'element-plus';
 import { Edit } from '@element-plus/icons-vue';
 import { ref } from 'vue';
 import { useAlgorithmStore } from './store'

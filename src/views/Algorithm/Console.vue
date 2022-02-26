@@ -30,6 +30,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ElIcon, ElTreeV2 } from 'element-plus';
+
+
 import { CaretTop, CaretBottom } from '@element-plus/icons-vue'
 import { historyToTree } from '../../utils/Console/Console';
 import { computed, ref } from 'vue';

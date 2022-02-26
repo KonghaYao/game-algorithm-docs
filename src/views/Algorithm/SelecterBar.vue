@@ -21,8 +21,8 @@
 </template>
 
 <script lang="ts" setup>
+import { ElIcon } from 'element-plus';
 import { CaretRight } from '@element-plus/icons-vue';
-import { ref } from 'vue';
 import { algorithmList } from '../../router/algorithmList';
 const routes = algorithmList
 
