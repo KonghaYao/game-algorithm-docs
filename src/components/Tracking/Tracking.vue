@@ -1,11 +1,11 @@
 <template>
-    <div class="bg-red-50 p-4">
+    <div class="bg-red-50 p-4 flex flex-col flex-grow">
         <div class="select-none pointer-events-none text-lg py-2 text-gray-700">Tracking : 视线追踪算法</div>
-        <div class="flex justify-evenly h-full">
+        <div class="flex justify-evenly overflow-hidden flex-grow">
             <!-- 地图展示 -->
-            <Tracker ref="tracker" class="flex-grow h-full"></Tracker>
+            <Tracker ref="tracker" class="flex-grow h-full w-full m-4"></Tracker>
             <!-- 颜色备注 -->
-            <div class="flex flex-col justify-evenly w-1/4">
+            <div class="flex flex-col justify-evenly flex-grow min-w-fit">
                 <Detail></Detail>
             </div>
         </div>

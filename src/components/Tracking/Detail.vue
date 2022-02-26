@@ -1,19 +1,13 @@
 <template>
-    <div class="flex flex-col w-full">
-        <div v-for="{ name, value } in template" class="row">
-            <span>{{ name }}</span>
-            <span>{{ value }}</span>
-        </div>
+    <div class="flex flex-col">
+        <Detail :template="template"></Detail>
     </div>
 </template>
-<style scoped>
-.row {
-    @apply flex flex-row justify-between;
-}
-</style>
+
 <script lang="ts" setup>
 import { computed, reactive, ref } from 'vue';
 import { useStore } from './store';
+import Detail from '../Common/Detail.vue';
 
 const store = useStore()
 

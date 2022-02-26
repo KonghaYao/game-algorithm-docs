@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col h-full w-full" ref="element"></div>
+    <div class ref="element"></div>
 </template>
 
 <script lang="ts" setup>

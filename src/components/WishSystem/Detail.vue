@@ -1,9 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div v-for="{ name, value } in template" class="row">
-            <span>{{ name }}</span>
-            <span>{{ value }}</span>
-        </div>
+        <Detail :template="template"></Detail>
         <span v-for="{ name, pitchTime, totalTime } in store.pitchArray">
             <div class="row">
                 <span>{{ name }}</span>
@@ -23,13 +20,8 @@
     </div>
 </template>
 
-<style scoped>
-.row {
-    @apply flex flex-row justify-between;
-}
-</style>
-
 <script lang="ts" setup>
+import Detail from '../Common/Detail.vue'
 import { computed, reactive, ref } from 'vue';
 import { useWishStore } from './store';
 

@@ -18,7 +18,9 @@ export const createGame = (
 
     // 生成鸟群
     const { flock, boids } = createBoids(store);
-
+    flock.flock.forEach((i) => {
+        i.sandboxDimensions = new Vector(parseInt(width), parseInt(height));
+    });
     // 生成信息素
     const foodBody = createEmitter(store, flock, app);
     app.stage.addChild(foodBody, ...boids);

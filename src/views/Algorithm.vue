@@ -11,7 +11,7 @@
             <SelecterBar></SelecterBar>
             <div class="flex h-full flex-col w-full overflow-hidden">
                 <Content class="flex-grow"></Content>
-                <Console></Console>
+                <Console class="flex-grow"></Console>
             </div>
             <div
                 class="transition-all"

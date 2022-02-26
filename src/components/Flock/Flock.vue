@@ -1,11 +1,11 @@
 <template>
-    <div class="bg-red-50 p-4">
+    <div class="bg-red-50 p-4 flex flex-col">
         <div class="select-none pointer-events-none text-lg py-2 text-gray-700">Flock : 模拟群算法</div>
-        <div class="flex justify-evenly h-full">
+        <div class="flex justify-evenly overflow-hidden flex-grow">
             <!-- 地图展示 -->
-            <Tracker ref="flock" class="flex-grow h-full"></Tracker>
+            <Tracker ref="flock" class="flex-grow h-full w-full m-4"></Tracker>
             <!-- 颜色备注 -->
-            <div class="flex flex-col justify-evenly w-1/4">
+            <div class="flex flex-col justify-evenly items-center h-full flex-grow">
                 <Detail></Detail>
             </div>
         </div>
