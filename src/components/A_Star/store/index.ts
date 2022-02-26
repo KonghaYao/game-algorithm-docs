@@ -37,8 +37,8 @@ export const useStore = defineStore({
                 end: { x, y },
                 isWall: ({ x, y }) => {
                     // 需要越界保护
-                    if (typeof this.maze[x]?.[y] === "number") {
-                        return this.maze[x][y] === 1;
+                    if (typeof this.maze[y]?.[x] === "number") {
+                        return this.maze[y][x] === 1;
                     } else {
                         return true;
                     }
@@ -56,7 +56,8 @@ export const useStore = defineStore({
                 },
             });
 
-            if (path.length) this._renderPath(path);
+            this._renderPath(path);
+
             this.inputCache.start = undefined;
         },
         _renderPath(path: Point[]) {
